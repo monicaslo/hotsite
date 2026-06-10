@@ -21,7 +21,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <style>
-    /* Fonte local do repositório */
+    /* Primeira fonte local do repositório */
     @font-face {
       font-family: 'Barbie';
       src: url('fonts/barbie.woff') format('woff');
@@ -29,7 +29,16 @@
       font-style: normal;
       font-display: swap;
     }
-
+    
+    /* Segunda fonte local do repositório */
+    @font-face {
+    font-family: 'Retro';
+    src: url('fonts/retro.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    }
+    
     /* ─────────────────────────────────────────
        ✏️ EDITE: PALETA DE CORES GLOBAL
        Troque os valores abaixo para a identidade do evento
@@ -44,6 +53,7 @@
       --fonte-corpo:    'Barbie', sans-serif;
       /* ✏️ Use var(--fonte-barbie) em qualquer elemento para aplicar a fonte */
       --fonte-barbie:   'Barbie', cursive;
+      --fonte-retro: 'Retro', cursive;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
