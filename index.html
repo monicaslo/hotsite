@@ -244,19 +244,24 @@
       background-size: cover;
       background-position: center;
     }
-    /* Overlay zerado — fundo aparece na cor original */
+    /* Sem overlay — fundo aparece na cor original */
     #galeria::before {
       content: '';
       position: absolute; inset: 0;
       background: transparent;
       pointer-events: none;
     }
-    .galeria-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; text-align: center; }
+    .galeria-inner {
+      position: relative; z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
     .galeria-grid {
       display: grid;
-      /* 1 coluna vertical à esquerda + 2 colunas de horizontais à direita */
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(2, 260px);
+      /* Grid original: 1 vertical à esquerda + 2 colunas de horizontais */
+      grid-template-columns: 1fr 1.4fr 1fr;
+      grid-auto-rows: 240px;
       gap: 8px;
     }
     .galeria-grid .foto {
@@ -270,25 +275,27 @@
       filter: saturate(1) brightness(1);
     }
     .galeria-grid .foto:hover img { transform: scale(1.07); filter: saturate(1.1) brightness(1.05); }
-    /* Foto vertical ocupa as 2 linhas na primeira coluna */
-    .galeria-grid .foto:first-child {
-      grid-row: span 2;
-    }
+    /* Foto vertical ocupa 2 linhas */
+    .galeria-grid .foto:first-child { grid-row: span 2; }
 
-    /* Lightbox */
+    /* Lightbox com fundo desfocado */
     #lightbox {
       display: none;
       position: fixed; inset: 0;
-      background: rgba(0,0,0,0);
       z-index: 9999;
       align-items: center;
       justify-content: center;
+      /* Blur no fundo */
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(0,0,0,.35);
     }
     #lightbox.open { display: flex; }
-    #lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; }
+    #lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 4px; }
     #lightbox-close {
       position: absolute; top: 1.5rem; right: 2rem;
       font-size: 2rem; color: #fff; cursor: pointer; line-height: 1;
+      text-shadow: 0 1px 6px rgba(0,0,0,.6);
     }
 
     /* ── TEXTO CONVIDATIVO ── */
@@ -690,24 +697,24 @@
 
     <!--
     ✏️ EDITE: FOTOS DA GALERIA
-    Foto 1: vertical (portrait) — ocupa toda a altura à esquerda. Ideal: 600×900px
-    Fotos 2 a 5: horizontais — ficam em 2 colunas à direita. Ideal: 800×500px cada
+    Foto 1: vertical (portrait) — ocupa 2 linhas à esquerda. Ideal: 600×900px
+    Fotos 2 a 5: horizontais — 2 colunas à direita. Ideal: 800×600px cada
     -->
     <div class="galeria-grid">
       <div class="foto" onclick="openLightbox(this)">
         <img src="https://picsum.photos/seed/1/600/900" alt="Foto 1" />
       </div>
       <div class="foto" onclick="openLightbox(this)">
-        <img src="https://picsum.photos/seed/2/800/500" alt="Foto 2" />
+        <img src="https://picsum.photos/seed/2/800/600" alt="Foto 2" />
       </div>
       <div class="foto" onclick="openLightbox(this)">
-        <img src="https://picsum.photos/seed/3/800/500" alt="Foto 3" />
+        <img src="https://picsum.photos/seed/3/800/600" alt="Foto 3" />
       </div>
       <div class="foto" onclick="openLightbox(this)">
-        <img src="https://picsum.photos/seed/4/800/500" alt="Foto 4" />
+        <img src="https://picsum.photos/seed/4/800/600" alt="Foto 4" />
       </div>
       <div class="foto" onclick="openLightbox(this)">
-        <img src="https://picsum.photos/seed/5/800/500" alt="Foto 5" />
+        <img src="https://picsum.photos/seed/5/800/600" alt="Foto 5" />
       </div>
     </div>
   </div>
