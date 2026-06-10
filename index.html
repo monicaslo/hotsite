@@ -21,6 +21,15 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <style>
+    /* Fonte local do repositório */
+    @font-face {
+      font-family: 'Barbie';
+      src: url('fonts/barbie.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     /* ─────────────────────────────────────────
        ✏️ EDITE: PALETA DE CORES GLOBAL
        Troque os valores abaixo para a identidade do evento
@@ -33,6 +42,8 @@
       --cor-acento2:    #f2e4d4;   /* off-white suave */
       --fonte-display:  'Cormorant Garamond', serif;
       --fonte-corpo:    'Jost', sans-serif;
+      /* ✏️ Use var(--fonte-barbie) em qualquer elemento para aplicar a fonte */
+      --fonte-barbie:   'Barbie', cursive;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -161,7 +172,7 @@
 
     #hero-subtitle {
       /* ✏️ EDITE: fonte da idade/subtítulo do hero */
-      font-family: 'Fredoka One', cursive;
+      font-family: var(--fonte-barbie);
       font-size: clamp(1.2rem, 3.5vw, 2rem);
       font-style: normal;
       color: var(--cor-primaria);
@@ -185,7 +196,7 @@
     }
     .countdown-num {
       /* ✏️ EDITE: fonte dos números da contagem */
-      font-family: 'Fredoka One', cursive;
+      font-family: var(--fonte-barbie);
       font-size: clamp(2.5rem, 7vw, 4.5rem);
       font-weight: 400;
       color: var(--cor-acento2);
@@ -195,7 +206,7 @@
     }
     .countdown-label {
       /* ✏️ EDITE: fonte dos labels (dias, horas...) */
-      font-family: 'Fredoka One', cursive;
+      font-family: var(--fonte-barbie);
       font-size: .75rem;
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -203,7 +214,7 @@
       margin-top: .3rem;
     }
     .countdown-sep {
-      font-family: 'Fredoka One', cursive;
+      font-family: var(--fonte-barbie);
       font-size: 3rem;
       color: var(--cor-primaria);
       opacity: .7;
