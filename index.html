@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- ✏️ EDITE: Fontes — troque os nomes abaixo se quiser outras famílias -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Fredoka+One&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
@@ -113,10 +113,11 @@
     }
 
     /* Overlay de cor sobre a imagem de fundo */
+    /* ✏️ EDITE: troque "transparent" por ex. rgba(0,0,0,.3) para escurecer levemente */
     #hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(160deg, rgba(14,10,18,.85) 0%, rgba(122,62,110,.25) 0%);
+      background: transparent;
       pointer-events: none;
     }
 
@@ -159,12 +160,13 @@
     }
 
     #hero-subtitle {
-      font-family: var(--fonte-display);
-      font-size: clamp(1rem, 3vw, 1.5rem);
-      font-style: italic;
+      /* ✏️ EDITE: fonte da idade/subtítulo do hero */
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(1.2rem, 3.5vw, 2rem);
+      font-style: normal;
       color: var(--cor-primaria);
       margin-top: .5rem;
-      letter-spacing: .1em;
+      letter-spacing: .05em;
     }
 
     /* Contagem regressiva */
@@ -182,41 +184,37 @@
       min-width: 70px;
     }
     .countdown-num {
-      font-family: var(--fonte-display);
+      /* ✏️ EDITE: fonte dos números da contagem */
+      font-family: 'Fredoka One', cursive;
       font-size: clamp(2.5rem, 7vw, 4.5rem);
-      font-weight: 300;
+      font-weight: 400;
       color: var(--cor-acento2);
       line-height: 1;
       min-width: 2ch;
       text-align: center;
     }
     .countdown-label {
-      font-size: .65rem;
-      letter-spacing: .2em;
+      /* ✏️ EDITE: fonte dos labels (dias, horas...) */
+      font-family: 'Fredoka One', cursive;
+      font-size: .75rem;
+      letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--cor-primaria);
       margin-top: .3rem;
     }
     .countdown-sep {
-      font-family: var(--fonte-display);
+      font-family: 'Fredoka One', cursive;
       font-size: 3rem;
       color: var(--cor-primaria);
-      opacity: .5;
+      opacity: .7;
       line-height: 1.2;
       align-self: flex-start;
       padding-top: .4rem;
     }
 
-    /* Elemento decorativo — ponto flutuante */
-    .float-orb {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      filter: blur(80px);
-      opacity: .25;
-    }
-    .orb1 { width: 400px; height: 400px; background: var(--cor-acento); top: -100px; right: -100px; }
-    .orb2 { width: 300px; height: 300px; background: var(--cor-primaria); bottom: -80px; left: -60px; }
+    /* Elemento decorativo — orbs desativados para não sujar o fundo colorido */
+    /* ✏️ EDITE: mude display para "block" para reativar */
+    .float-orb { display: none; }
 
     /* ── GALERIA ── */
     #galeria {
